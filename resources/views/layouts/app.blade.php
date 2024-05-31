@@ -29,7 +29,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    
+    <link rel="stylesheet" href="{{asset('css/pages/product-details.css')}}">
     @yield('styles')
   </head>
 <body

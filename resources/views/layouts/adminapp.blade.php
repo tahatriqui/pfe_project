@@ -76,25 +76,30 @@
 
             <!-- Nav Item - Users -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route("user.index")}}">
+                <a class="nav-link" href="{{ route('user.index') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Les utilisateur</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('prod.index') }}">
+                    <i class="fas fa-fw fa-box"></i>
+
+                    <span>Les produits</span></a>
+            </li>
+
             <!-- Nav Item - Users -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route("not.index")}}">
+                <a class="nav-link" href="{{ route('not.index') }}">
                     <i class="fas fa-fw fa-bell"></i>
                     <span>Les notification
                         @if ($count >= 9)
-                        <span
-                        class=" btn btn-danger btn-circle btn-sm">9+</span>
+                            <span class=" btn btn-danger btn-circle btn-sm">9+</span>
                         @elseif ($count == 0)
-
                         @else
-                        <span
-                        class=" btn btn-danger btn-circle btn-sm">{{ $count }}</span>
-                        @endif  </span></a>
+                            <span class=" btn btn-danger btn-circle btn-sm">{{ $count }}</span>
+                        @endif
+                    </span></a>
             </li>
 
             <!-- Nav Item - Charts -->
@@ -191,11 +196,10 @@
                                                 {{ $not->checked == true ? 'class=font-weight-bold' : '' }}>{{ $not->message }}</span>
                                         </div>
                                     </a>
-
-
                                 @endforeach
 
-                                <a class="dropdown-item text-center small text-gray-500" href="{{route('not.index')}}">Voir tout</a>
+                                <a class="dropdown-item text-center small text-gray-500"
+                                    href="{{ route('not.index') }}">Voir tout</a>
                             </div>
                         </li>
 
@@ -272,13 +276,12 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                <img class="img-profile rounded-circle"
-                                    src="{{  Auth::user()->image  }}">
+                                <img class="img-profile rounded-circle" src="{{ asset(Auth::user()->image) }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                
+
                                 <a class="dropdown-item" href="#" data-toggle="modal"
                                     data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -293,6 +296,7 @@
                 <!-- End of Topbar -->
 
                 @yield('content')
+
                 <!-- /.container-fluid -->
 
             </div>
@@ -302,7 +306,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright © djlaba website 2024</span>
                     </div>
                 </div>
             </footer>
@@ -383,19 +387,21 @@
     </script>
 
     <style>
-        .pagination{
+        .pagination {
             margin-top: 20px;
         }
+
         .page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: #060245;
-    border-color: #060245;
-}
-.topbar .nav-item .nav-link .img-profile {
-    height: 3rem;
-    width: 3rem;
-}
+            z-index: 3;
+            color: #fff;
+            background-color: #060245;
+            border-color: #060245;
+        }
+
+        .topbar .nav-item .nav-link .img-profile {
+            height: 3rem;
+            width: 3rem;
+        }
     </style>
 </body>
 

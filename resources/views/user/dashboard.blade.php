@@ -49,7 +49,7 @@
 @foreach ($products as $product)
 <article class="card">
     <a href="{{route("details",$product->id)}}">
-      <img width="266" src="{{$product->img}}" alt="" srcset="" />
+      <img width="266" src="{{ asset('storage/' . $product->img) }}" alt="" srcset="" />
     </a>
 
     <div style="width: 266px" class="content">

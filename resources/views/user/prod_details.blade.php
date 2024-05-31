@@ -29,7 +29,7 @@
 
     <main style="text-align: center;" class="flex ">
 
-      <img alt="" src="{{asset($products->img)}}" />
+      <img alt="" src="{{ asset('storage/' . $products->img) }}" />
 
       <div class="product-details">
         <div style="justify-content: space-between" class="flex">

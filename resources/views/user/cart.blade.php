@@ -26,6 +26,7 @@
 
   <main style="text-align: center" class="">
     <section class="cart">
+        
         @foreach ($products as $item)
             <article style="" class="product flex ">
                 <form action="{{route("cart.delete",$item->id)}}" method="post">
@@ -47,7 +48,7 @@
                 width="70"
                 height="70"
                 alt=""
-                src="{{$item->img}}"
+                src="{{ asset('storage/' . $item->img) }}"
                 />
             </article>
         @endforeach
